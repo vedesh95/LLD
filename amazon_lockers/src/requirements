@@ -1,0 +1,15 @@
+packages can be dropped to lockers
+packages can be of different sizes
+various strategies for assigning lockers to packages
+
+generate an access code for a locker when a package is dropped off
+while recipient can pick up the package, they must provide the access code
+invalid access code should not allow access to the locker
+
+
+design:
+enum SIZE SMALL, MEDIUM, LARGE
+assignment.AssignmentStrategy.Item - id size
+locker.Locker - id size isOccupied accessCode
+LockerManager - lockers assignLocker(package) generateAccessCode(locker) validateAccessCode(locker, code) map<lockerId, accesscode>
+
